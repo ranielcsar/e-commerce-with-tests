@@ -1,7 +1,7 @@
 import { Radio } from '@/components/Elements'
-import { getAllCategories } from '@/features/products/api'
 import { Typography } from '@material-tailwind/react'
-import { useEffect, useState } from 'react'
+import { useCategories } from '@/features/categories/hooks'
+import { useMemo } from 'react'
 
 export function Sidebar() {
   return (
@@ -13,7 +13,7 @@ export function Sidebar() {
   )
 }
 
-const categoryNames: Record<any, string> = {
+const categoryNames: Record<string, string> = {
   smartphones: 'Smartphones',
   laptops: 'Laptops',
   fragrances: 'Fragrâncias',
@@ -37,26 +37,20 @@ const categoryNames: Record<any, string> = {
 }
 
 function Categories() {
-  const [categories, setCategories] = useState(
-    [] as { value: string; label: string }[]
-  )
+  const { categories } = useCategories()
 
-  useEffect(() => {
-    ;(async () => {
-      const categories = (await getAllCategories()) as string[]
-
-      const newCategories = categories.map((category) => ({
+  const formatedCategories = useMemo(
+    () =>
+      categories?.map((category) => ({
         value: category,
         label: categoryNames[category]
-      }))
-
-      setCategories(newCategories)
-    })()
-  }, [])
+      })),
+    [categories]
+  )
 
   return (
     <section className="grid w-full">
-      <Radio name="category" options={categories} />
+      <Radio name="category" options={formatedCategories} />
     </section>
   )
 }

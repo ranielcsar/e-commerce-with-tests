@@ -1,7 +1,7 @@
 import { setupServer } from 'msw/node'
 
 import { getAllProductsHandler } from '@/features/products/mocks/getAllProductsHandler'
-import { getAllCategoriesHandler } from '@/features/products/mocks/getAllCategoriesHandler'
+import { getAllCategoriesHandler } from '@/features/categories/mocks/getAllCategoriesHandler'
 
 import 'whatwg-fetch'
 

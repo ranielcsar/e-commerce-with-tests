@@ -1,0 +1,1 @@
+export { getAllCategoriesHandler } from './getAllCategoriesHandler'
