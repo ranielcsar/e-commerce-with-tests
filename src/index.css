@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: inherit;
+  border-radius: 100px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 100px;
+
+  --tw-gradient-stops: #3949ab, #5c6bc0;
+
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+  background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+}

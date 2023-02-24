@@ -3,7 +3,7 @@ import { server } from '@/test/server'
 import { getAllCategoriesHandler } from '../mocks'
 import { getAllCategories } from '../api'
 
-async function getAllCategoriesTest() {
+async function getAllCategoriesFromAPI() {
   server.use(getAllCategoriesHandler)
 
   const data = await getAllCategories()
@@ -12,6 +12,4 @@ async function getAllCategoriesTest() {
   expect(data).toEqual(dataResult)
 }
 
-describe('Home categories', () => {
-  it('should get all categories from API', getAllCategoriesTest)
-})
+test('it should get all categories from API', getAllCategoriesFromAPI)

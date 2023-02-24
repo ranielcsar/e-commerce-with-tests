@@ -1,2 +1,5 @@
 export { Spinner } from './Spinner'
 export { Button } from './Button'
+export { Pagination } from './Pagination'
+export { Radio } from './Radio'
+export { Image } from './Image'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { Suspense } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import { Spinner } from '@/components/Elements'
@@ -9,7 +9,7 @@ type AppProviderProps = {
 
 export const AppProvider = ({ children }: AppProviderProps) => {
   return (
-    <React.Suspense
+    <Suspense
       fallback={
         <div className="flex items-center justify-center w-screen h-screen">
           <Spinner />
@@ -17,6 +17,6 @@ export const AppProvider = ({ children }: AppProviderProps) => {
       }
     >
       <Router>{children}</Router>
-    </React.Suspense>
+    </Suspense>
   )
 }

@@ -1,7 +1,10 @@
 import { setupServer } from 'msw/node'
-import { getAllProductsHandlers } from '@/features/home/mocks/getAllProductsHandler'
+
+import { getAllProductsHandler } from '@/features/products/mocks/getAllProductsHandler'
+import { getAllCategoriesHandler } from '@/features/products/mocks/getAllCategoriesHandler'
+
 import 'whatwg-fetch'
 
-const handlers = [getAllProductsHandlers]
+const handlers = [getAllProductsHandler, getAllCategoriesHandler]
 
 export const server = setupServer(...handlers)
