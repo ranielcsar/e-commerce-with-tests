@@ -1,12 +1,12 @@
 import { Pagination } from '@/components/Elements'
+import { usePagination } from '@/hooks'
 import { withLoading } from '@/utils/withLoading'
-import { useState } from 'react'
 
 import { ProductGrid, ProductCard } from './components'
 import { useProducts } from './hooks/useProducts'
 
 export function Products() {
-  const [page, setPage] = useState(1)
+  const { page, setPage } = usePagination()
   const { products, loading } = useProducts(page)
 
   return withLoading(loading, () => (

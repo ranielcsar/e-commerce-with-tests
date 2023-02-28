@@ -6,7 +6,9 @@ import { useMemo } from 'react'
 export function Sidebar() {
   return (
     <aside className="sticky top-0 h-screen col-[1] row-[2] bg-gray-900 text-white pl-5 overflow-y-auto">
-      <Typography variant="h5">Categorias</Typography>
+      <Typography variant="h5" className="mb-4">
+        Categorias
+      </Typography>
 
       <Categories />
     </aside>

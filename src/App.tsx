@@ -1,5 +1,10 @@
+import { ShopContextProvider } from '@/features/shop_context'
 import { AppRoutes } from './routes'
 
 export function App() {
-  return <AppRoutes />
+  return (
+    <ShopContextProvider>
+      <AppRoutes />
+    </ShopContextProvider>
+  )
 }

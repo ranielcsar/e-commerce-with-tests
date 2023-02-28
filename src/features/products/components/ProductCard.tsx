@@ -1,5 +1,7 @@
 import { Button, Image } from '@/components/Elements'
 import { CartIcon, StarIcon } from '@/components/Icons'
+import { ShopActions } from '@/features/shop_context/reducer'
+import { useShop } from '@/hooks'
 import { T_Product } from '@/types'
 import { convertToMonetaryValue } from '@/utils'
 
@@ -12,6 +14,17 @@ import {
 } from '@material-tailwind/react'
 
 export function ProductCard({ product }: { product: T_Product }) {
+  const { dispatch } = useShop()
+
+  const handleAddItemToCart = (product: T_Product) => {
+    return function () {
+      dispatch({
+        type: ShopActions.ADD_TO_CART,
+        payload: product
+      })
+    }
+  }
+
   return (
     <Card data-testid="product-card" className="w-full h-full max-h-[25rem]">
       <CardHeader color="gray" className="relative h-56">
@@ -36,7 +49,7 @@ export function ProductCard({ product }: { product: T_Product }) {
       <CardFooter divider className="flex items-center justify-between py-3">
         <Price price={product.price} />
 
-        <Button size="sm">
+        <Button size="sm" onClick={handleAddItemToCart(product)}>
           <CartIcon />
         </Button>
       </CardFooter>

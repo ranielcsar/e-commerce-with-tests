@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --watchAll"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@material-tailwind/react": "^1.2.5",

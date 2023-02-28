@@ -5,7 +5,6 @@ import { getAllProducts } from '../api'
 
 export function useProducts(page: number) {
   const [products, setProducts] = useState<ProductsResponse>()
-  // const [loading, setLoading] = useState(true)
   const { loading, setLoadingTrue, setLoadingFalse } = useLoading()
 
   async function getProducts() {

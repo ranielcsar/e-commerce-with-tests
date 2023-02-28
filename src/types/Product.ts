@@ -10,6 +10,7 @@ export type T_Product = {
   category: string
   thumbnail: string
   images: string[]
+  quantity: number
 }
 
 export type ProductsResponse = {

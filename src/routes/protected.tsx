@@ -1,4 +1,5 @@
 import { Spinner } from '@/components/Elements'
+import { Cart } from '@/features/cart'
 import { Products } from '@/features/products'
 import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
@@ -23,7 +24,7 @@ export const protectedRoutes = [
     element: <Products />
   },
   {
-    path: '/home',
-    element: <>outra home</>
+    path: '/cart',
+    element: <Cart />
   }
 ]

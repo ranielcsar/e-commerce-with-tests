@@ -43,6 +43,8 @@ async function renderProductCards() {
   expect.arrayContaining(productCards)
 }
 
-test('it should get all products from API', getProductsFromApi)
+describe('Products', () => {
+  it('should get all products from API', getProductsFromApi)
 
-test('it should render all products', renderProductCards)
+  it('should render all products', renderProductCards)
+})
