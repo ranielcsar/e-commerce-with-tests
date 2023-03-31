@@ -14,3 +14,4 @@ Made with: **Vite, React and Typescript**
   - Tailwind CSS
   - Material Tailwind
   - Axios
+  - Vite
