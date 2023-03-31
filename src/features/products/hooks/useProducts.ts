@@ -9,7 +9,16 @@ export function useProducts(page: number) {
 
   async function getProducts() {
     setLoadingTrue()
-    const newProducts = await getAllProducts({ skip: page })
+    let newProducts = await getAllProducts({ skip: page })
+
+    if (newProducts.products) {
+      for (let product in newProducts.products) {
+        newProducts.products[product] = {
+          ...newProducts.products[product],
+          quantity: 0
+        }
+      }
+    }
 
     setProducts(newProducts)
     setLoadingFalse()
