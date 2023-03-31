@@ -38,7 +38,7 @@ export function CartList({ cart }: CartList) {
   }, [])
 
   return (
-    <section className="grid grid-cols-[repeat(auto-fit,minmax(17rem,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(24rem,1fr))] 2xl:grid-cols-[repeat(auto-fit,minmax(27rem,1fr))] gap-5 mx-16 mb-[10rem] w-full">
+    <main className="grid grid-cols-[repeat(auto-fit,minmax(100%,20vw))] md:grid-cols-[repeat(auto-fit,minmax(25rem,20vw))] gap-x-5 gap-y-12 m-10 mx-0 justify-center items-center">
       {cart.map((product) => (
         <ProductCard
           key={product.id}
@@ -48,6 +48,6 @@ export function CartList({ cart }: CartList) {
           onRemoveFromCart={handleRemoveFromCart(product)}
         />
       ))}
-    </section>
+    </main>
   )
 }
