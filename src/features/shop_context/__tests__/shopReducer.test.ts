@@ -38,7 +38,7 @@ function runCartTest(
 function addToCartTest() {
   const expectedUpdatedState = {
     ...initialShopState,
-    cart: [product]
+    cart: [{ ...product, quantity: product.quantity + 1 }]
   }
 
   runCartTest(initialShopState, ShopActions.ADD_TO_CART, expectedUpdatedState)
