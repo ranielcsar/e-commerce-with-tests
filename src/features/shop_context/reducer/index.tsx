@@ -32,7 +32,10 @@ export function shopReducer(
     case ADD_TO_CART:
       return {
         ...state,
-        cart: addItemToCart(cart, product)
+        cart: addItemToCart(cart, {
+          ...product,
+          quantity: product.quantity + 1
+        })
       }
     case REMOVE_FROM_CART:
       return {
