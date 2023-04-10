@@ -1,2 +1,2 @@
-export * as Layout from './Layout'
-export * as Elements from './Elements'
+export * as Layout from './layout'
+export * as Elements from './elements'

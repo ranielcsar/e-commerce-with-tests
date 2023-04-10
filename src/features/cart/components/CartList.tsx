@@ -3,12 +3,8 @@ import { useShop } from '@/hooks'
 import { T_Product, ShopActions } from '@/types'
 import { useCallback } from 'react'
 
-export type CartList = {
-  cart: T_Product[]
-}
-
-export function CartList({ cart }: CartList) {
-  const { dispatch } = useShop()
+export function CartList() {
+  const { cart, dispatch } = useShop()
 
   const handleIncrementQuantity = useCallback((product: T_Product) => {
     return function () {
@@ -39,15 +35,19 @@ export function CartList({ cart }: CartList) {
 
   return (
     <main className="grid grid-cols-[repeat(auto-fit,minmax(100%,20vw))] md:grid-cols-[repeat(auto-fit,minmax(25rem,20vw))] gap-x-5 gap-y-12 m-10 mx-0 justify-center items-center">
-      {cart.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-          onDecrementQuantity={handleDecrementQuantity(product)}
-          onIncrementQuantity={handleIncrementQuantity(product)}
-          onRemoveFromCart={handleRemoveFromCart(product)}
-        />
-      ))}
+      {cart.length === 0 ? (
+        <h1 className="text-5xl">Nenhum produto no carrinho</h1>
+      ) : (
+        cart.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onDecrementQuantity={handleDecrementQuantity(product)}
+            onIncrementQuantity={handleIncrementQuantity(product)}
+            onRemoveFromCart={handleRemoveFromCart(product)}
+          />
+        ))
+      )}
     </main>
   )
 }

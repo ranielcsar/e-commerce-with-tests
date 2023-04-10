@@ -1,4 +1,4 @@
-import { Spinner } from '@/components/Elements'
+import { Spinner } from '@/components/elements'
 import { ComponentType } from 'react'
 
 export function withLoading(isLoading: boolean, Component: ComponentType) {

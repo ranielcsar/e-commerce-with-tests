@@ -1,4 +1,4 @@
-import { Spinner } from '@/components/Elements'
+import { Spinner } from '@/components/elements'
 import { Cart } from '@/features/cart'
 import { Products } from '@/features/products'
 import { Suspense } from 'react'

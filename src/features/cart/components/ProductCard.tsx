@@ -1,4 +1,4 @@
-import { Image, Button } from '@/components/Elements'
+import { Image, Button } from '@/components/elements'
 import { T_Product } from '@/types'
 import { convertToMonetaryValue } from '@/utils'
 

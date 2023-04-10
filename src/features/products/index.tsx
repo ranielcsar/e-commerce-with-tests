@@ -1,4 +1,4 @@
-import { Pagination } from '@/components/Elements'
+import { Pagination } from '@/components/elements'
 import { usePagination } from '@/hooks'
 import { withLoading } from '@/utils/withLoading'
 

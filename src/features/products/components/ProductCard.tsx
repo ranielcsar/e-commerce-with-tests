@@ -1,5 +1,5 @@
-import { Button, Image } from '@/components/Elements'
-import { CartIcon, StarIcon } from '@/components/Icons'
+import { Button, Image } from '@/components/elements'
+import { CartIcon, StarIcon } from '@/components/icons'
 import { ShopActions } from '@/features/shop_context/reducer'
 import { useShop } from '@/hooks'
 import { T_Product } from '@/types'

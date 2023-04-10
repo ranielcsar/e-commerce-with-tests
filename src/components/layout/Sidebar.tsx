@@ -1,4 +1,4 @@
-import { Radio } from '@/components/Elements'
+import { Radio } from '@/components/elements'
 import { Typography } from '@material-tailwind/react'
 import { useCategories } from '@/features/categories/hooks'
 import { useMemo } from 'react'
@@ -51,8 +51,8 @@ function Categories() {
   )
 
   return (
-    <section className="grid w-full">
+    <main className="grid w-full">
       <Radio name="category" options={formatedCategories} />
-    </section>
+    </main>
   )
 }
