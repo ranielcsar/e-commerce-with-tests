@@ -5,14 +5,12 @@ import { Card } from '@material-tailwind/react'
 export function TotalValueCard() {
   const { cart } = useShop()
 
-  const totalFromEachProductInCart = cart.map(
-    (product) => product.price * product.quantity
-  )
+  let totalValue = 0
 
-  const totalValue = totalFromEachProductInCart.reduce(
-    (previousValue, actualValue) => previousValue + actualValue,
-    0
-  )
+  cart.forEach((product) => {
+    const productTotal = product.price * product.quantity
+    totalValue += productTotal
+  })
 
   return (
     <Card className="absolute right-[5rem] top-[20vw] w-max flex items-center justify-between text-2xl border bg-[white] m-auto px-[35px] py-5 border-solid">
