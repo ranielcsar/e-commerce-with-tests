@@ -44,7 +44,7 @@ async function renderProductCards() {
 }
 
 describe('Products', () => {
-  it('should get all products from API', getProductsFromApi)
+  test('it should get all products from API', getProductsFromApi)
 
-  it('should render all products', renderProductCards)
+  test('it should render all products', renderProductCards)
 })

@@ -97,17 +97,20 @@ function decrementItemQuantityTest() {
 }
 
 describe('Shop reducer - CRUD', () => {
-  it('should update cart in state when add to cart', addToCartTest)
+  test('it should update cart in state when add to cart', addToCartTest)
 
-  it('should update cart in state when remove from cart', removeFromCartTest)
+  test(
+    'it should update cart in state when remove from cart',
+    removeFromCartTest
+  )
 
-  it(
-    'should increment a specific item quantity in cart',
+  test(
+    'it should increment a specific item quantity in cart',
     incrementItemQuantityTest
   )
 
-  it(
-    'should decrement a specific item quantity in cart',
+  test(
+    'it should decrement a specific item quantity in cart',
     decrementItemQuantityTest
   )
 })

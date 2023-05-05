@@ -12,4 +12,6 @@ async function getAllCategoriesFromAPI() {
   expect(data).toEqual(dataResult)
 }
 
-test('it should get all categories from API', getAllCategoriesFromAPI)
+describe('Categories', () => {
+  test('it should get all categories from API', getAllCategoriesFromAPI)
+})

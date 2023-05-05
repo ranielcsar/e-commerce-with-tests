@@ -34,31 +34,34 @@ function setup() {
   return { product, onDecrementQuantity, onIncrementQuantity, onRemoveFromCart }
 }
 
+function clickOnButtonTest(
+  button: HTMLElement,
+  callback: jest.Mock<any, any, any>
+) {
+  expect(button).toBeInTheDocument()
+  fireEvent.click(button)
+  expect(callback).toHaveBeenCalledTimes(1)
+}
+
 function onDecrementTest() {
   const { onDecrementQuantity } = setup()
 
   const decrementButton = screen.getByTestId('decrement-btn')
-  expect(decrementButton).toBeInTheDocument()
-  fireEvent.click(decrementButton)
-  expect(onDecrementQuantity).toHaveBeenCalledTimes(1)
+  clickOnButtonTest(decrementButton, onDecrementQuantity)
 }
 
 function onIncrementTest() {
   const { onIncrementQuantity } = setup()
 
   const incrementButton = screen.getByTestId('increment-btn')
-  expect(incrementButton).toBeInTheDocument()
-  fireEvent.click(incrementButton)
-  expect(onIncrementQuantity).toHaveBeenCalledTimes(1)
+  clickOnButtonTest(incrementButton, onIncrementQuantity)
 }
 
 function onRemoveTest() {
   const { onRemoveFromCart } = setup()
 
   const removeButton = screen.getByTestId('remove-btn')
-  expect(removeButton).toBeInTheDocument()
-  fireEvent.click(removeButton)
-  expect(onRemoveFromCart).toHaveBeenCalledTimes(1)
+  clickOnButtonTest(removeButton, onRemoveFromCart)
 }
 
 describe('Product on Cart ACTIONS', () => {
